@@ -4,13 +4,15 @@
 
 import json
 import requests
-from config import BEARER_TOKEN, SOURCE_URL, TARGET_URL, HEADERS
+import argparse
+from config import BEARER_TOKEN, SOURCE_URL, TARGET_URL, HEADERS_SOURCE, HEADERS_TARGET
 
 # === 3) Obtener los flows desde SOURCE_URL ===
 
 def get_flows() -> list:
     try:
-        resp = requests.get(SOURCE_URL, headers=HEADERS, timeout=45)
+        url = f"{SOURCE_URL}/chatflows"
+        resp = requests.get(url, headers=HEADERS_SOURCE, timeout=45)
         if resp.status_code == 200:
             return resp.json()
         else:
@@ -27,12 +29,12 @@ def put_flow(flow: dict, idx: int, total: int) -> None:
         print(f"[{idx}/{total}] ❌ Objeto sin 'id'. Saltando.")
         return
 
-    url = f"{TARGET_URL}/{flow_id}"
+    url = f"{TARGET_URL}/chatflows/{flow_id}"
     # print(f"[{idx}/{total}] URL: {url}")
     # print(f"[{idx}/{total}] Headers: {HEADERS}")
     # print(f"[{idx}/{total}] Payload: {json.dumps(flow, indent=2)}")
     try:
-        resp = requests.put(url, headers=HEADERS, json=flow, timeout=45)
+        resp = requests.put(url, headers=HEADERS_TARGET, json=flow, timeout=45)
         ok = 200 <= resp.status_code < 300
         status = "✅ OK" if ok else "❌ FAIL"
         print(f"[{idx}/{total}] PUT {flow_id} -> {resp.status_code} {status}")
@@ -44,16 +46,62 @@ def put_flow(flow: dict, idx: int, total: int) -> None:
     except requests.RequestException as e:
         print(f"[{idx}/{total}] ❌ Error de red para {flow_id}: {e}")
 
+def export_flows(output_file: str) -> None:
+    """Exporta los flows desde SOURCE_URL a un archivo JSON."""
+    print(f"Exportando flows desde {SOURCE_URL}...")
+    flows = get_flows()
+    if not flows:
+        print("No se encontraron flows para exportar.")
+        return
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(flows, f, indent=2, ensure_ascii=False)
+    print(f"Flows exportados a {output_file}")
+
+def import_flows(input_file: str) -> None:
+    """Importa los flows desde un archivo JSON a TARGET_URL."""
+    print(f"Importando flows desde {input_file} a {TARGET_URL}...")
+    try:
+        with open(input_file, 'r', encoding='utf-8') as f:
+            flows = json.load(f)
+    except FileNotFoundError:
+        print(f"Archivo {input_file} no encontrado.")
+        return
+    total = len(flows)
+    if total == 0:
+        print("No hay flows en el archivo.")
+        return
+    for i, flow in enumerate(flows, 1):
+        put_flow(flow, i, total)
+
+def sync_flows() -> None:
+    """Sincroniza: exporta de SOURCE_URL e importa a TARGET_URL."""
+    print(f"Sincronizando flows de {SOURCE_URL} a {TARGET_URL}...")
+    flows = get_flows()
+    total = len(flows)
+    if total == 0:
+        print("No hay flows para sincronizar.")
+        return
+    for i, flow in enumerate(flows, 1):
+        put_flow(flow, i, total)
+
 flows = get_flows()
 
 def main():
-    total = len(flows)
-    if total == 0:
-        print("No hay elementos en 'flows'. Pega tu array en la variable 'flows'.")
-        return
+    parser = argparse.ArgumentParser(description="Herramienta para importar/exportar flows de agentes")
+    parser.add_argument('--export', type=str, help='Exportar flows a archivo JSON (ej: --export flows.json)')
+    parser.add_argument('--import', dest='import_file', type=str, help='Importar flows desde archivo JSON (ej: --import flows.json)')
+    parser.add_argument('--sync', action='store_true', help='Sincronizar: exportar de SOURCE_URL e importar a TARGET_URL')
 
-    for i, flow in enumerate(flows, 1):
-        put_flow(flow, i, total)
+    args = parser.parse_args()
+
+    if args.export:
+        export_flows(args.export)
+    elif args.import_file:
+        import_flows(args.import_file)
+    elif args.sync:
+        sync_flows()
+    else:
+        parser.print_help()
 
 if __name__ == "__main__":
     main()

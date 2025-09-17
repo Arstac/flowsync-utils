@@ -1,0 +1,245 @@
+[
+  {
+    "id": "f501ac4f-3488-459c-900b-b744d9b4e168",
+    "name": "accessToken",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-04T08:41:01.000Z",
+    "updatedDate": "2025-08-04T10:34:16.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "f88b7c2a-7ef7-4ba1-a697-c7953342a33f",
+    "name": "date",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-12T09:46:39.000Z",
+    "updatedDate": "2025-08-12T09:46:39.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "86146fbe-07ae-4d65-8e15-e86d94a98d03",
+    "name": "turn",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-12T09:46:45.000Z",
+    "updatedDate": "2025-08-12T09:46:45.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "10238635-c841-4729-8005-60eee049b54b",
+    "name": "userId",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-12T10:17:47.000Z",
+    "updatedDate": "2025-08-12T10:17:47.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "3232e08c-eb64-415c-9dc2-fbb5d426ecbb",
+    "name": "officeId",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-12T10:18:30.000Z",
+    "updatedDate": "2025-08-12T10:18:30.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "23c657d6-a6ba-44d8-9599-f83e081881e7",
+    "name": "vehicle",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-12T10:18:46.000Z",
+    "updatedDate": "2025-08-12T10:18:46.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "6ac23c1f-2105-4788-a5dc-6f272e2ec614",
+    "name": "zoneId",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-12T10:19:01.000Z",
+    "updatedDate": "2025-08-12T10:19:01.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "2e0413ae-3ef7-4b6d-b82f-4b55c08e35b9",
+    "name": "reservationId",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-13T07:08:41.000Z",
+    "updatedDate": "2025-08-13T07:08:41.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "f973938e-e72d-4a56-a621-c67482fe2055",
+    "name": "idAccess",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-14T09:15:01.000Z",
+    "updatedDate": "2025-08-14T09:15:01.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "e5fd13ef-45b4-44db-a272-415b3f576ab7",
+    "name": "latitude",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-14T09:15:16.000Z",
+    "updatedDate": "2025-08-14T09:15:16.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "21527500-1e5e-4cea-a856-d3fe2f8d438e",
+    "name": "longitude",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-14T09:15:22.000Z",
+    "updatedDate": "2025-08-14T09:15:22.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "91cd734b-7824-45ef-8b92-dd51e0af1688",
+    "name": "roomId",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-18T10:02:31.000Z",
+    "updatedDate": "2025-08-18T10:02:31.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "6ee3ce8d-8f81-47ee-bfe2-28a1a5719b9d",
+    "name": "duration",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-18T10:02:38.000Z",
+    "updatedDate": "2025-08-18T10:02:38.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "914ad965-e502-4d94-88a3-945d631ac8c3",
+    "name": "startTime",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-18T10:02:45.000Z",
+    "updatedDate": "2025-08-18T10:02:45.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "dfcc8164-44b1-4b77-9dbd-74e223c69417",
+    "name": "subject",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-18T10:02:56.000Z",
+    "updatedDate": "2025-08-18T10:02:56.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "3d0622e9-8983-437c-9958-f5559e24df82",
+    "name": "description",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-18T10:03:03.000Z",
+    "updatedDate": "2025-08-18T10:03:03.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "19dfc401-63c6-4572-a0ff-fe189e1569b9",
+    "name": "visitors",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-19T08:05:04.000Z",
+    "updatedDate": "2025-08-19T08:05:04.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "2c3e3144-8775-4ea0-a0e6-a2ac10dfe4ff",
+    "name": "nombre",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-19T09:18:35.000Z",
+    "updatedDate": "2025-08-19T09:18:35.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "51dcc6fb-24af-4521-95a2-a13433314458",
+    "name": "endTime",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-19T10:45:30.000Z",
+    "updatedDate": "2025-08-19T10:45:30.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "6335d74c-6aa3-451f-b9ee-37962a06df5e",
+    "name": "startDate",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-19T11:09:00.000Z",
+    "updatedDate": "2025-08-19T11:09:00.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "f41cedd3-48a5-4ba9-9010-71ff2e7264b8",
+    "name": "rooms",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-19T11:09:05.000Z",
+    "updatedDate": "2025-08-19T11:09:05.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "4796ce09-7fe0-479a-a183-1ab9c50c2b7d",
+    "name": "csv",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-20T16:17:52.000Z",
+    "updatedDate": "2025-08-20T16:17:52.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "ed7851eb-4d03-46e8-a8f1-a1ba244490b9",
+    "name": "endDate",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-20T16:45:41.000Z",
+    "updatedDate": "2025-08-20T16:45:41.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "b762e151-425b-4210-ac00-810e437985c3",
+    "name": "incidenciaId",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-26T06:55:35.000Z",
+    "updatedDate": "2025-08-26T06:55:35.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "787bf08c-1556-4242-bb4c-ff1b32c81b83",
+    "name": "comentarioIncidencia",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-26T07:00:29.000Z",
+    "updatedDate": "2025-08-26T07:00:29.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "7ae1f18d-0b94-4d6b-8f3e-b48310cc8416",
+    "name": "incidenciasPath",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-26T08:28:09.000Z",
+    "updatedDate": "2025-08-26T08:28:09.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  },
+  {
+    "id": "aafe4467-2b59-47ae-a710-04e7d802381f",
+    "name": "datosReserva",
+    "value": "",
+    "type": "runtime",
+    "createdDate": "2025-08-26T09:28:23.000Z",
+    "updatedDate": "2025-08-26T09:28:23.000Z",
+    "workspaceId": "425d894d-ff36-45d2-b3b7-5f5379d304be"
+  }
+]

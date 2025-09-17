@@ -22,18 +22,37 @@ El script `main.py` extrae flujos (flows) de agentes desde `SOURCE_URL` y los im
 
 ## Uso
 
-Ejecuta el script con:
+La herramienta soporta varios modos de operación:
 
-```bash
-python main.py
-```
+- **Exportar flows a un archivo**:
+  ```bash
+  python main.py --export flows.json
+  ```
+  Esto extrae los flows desde `SOURCE_URL` y los guarda en `flows.json`.
 
-El script extraerá los flujos desde `SOURCE_URL` y los importará a `TARGET_URL`.
+- **Importar flows desde un archivo**:
+  ```bash
+  python main.py --import flows.json
+  ```
+  Esto lee los flows desde `flows.json` y los importa a `TARGET_URL`.
+
+- **Sincronizar directamente**:
+  ```bash
+  python main.py --sync
+  ```
+  Esto extrae los flows desde `SOURCE_URL` y los importa directamente a `TARGET_URL`.
+
+Si no se proporciona ningún argumento, se muestra la ayuda.
 
 ## Funciones
 
-- `get_flows()`: Obtiene la lista de flujos desde la URL local.
-- `put_flow(flow, idx, total)`: Envía un flujo individual al endpoint de Azure.
+- `get_flows()`: Obtiene la lista de flujos desde `SOURCE_URL`.
+- `put_flow(flow, idx, total)`: Envía un flujo individual a `TARGET_URL`.
+- `export_flows(output_file)`: Exporta flujos a un archivo JSON.
+- `import_flows(input_file)`: Importa flujos desde un archivo JSON.
+- `sync_flows()`: Sincroniza flujos directamente entre URLs.
+- `get_target_workspace_id()`: Obtiene el ID del workspace del destino desde `TARGET_URL`.
+- `change_workspaceid(filename)`: Cambia el `workspaceId` en todos los elementos de un archivo JSON al ID del workspace del destino.
 
 ## Notas
 
