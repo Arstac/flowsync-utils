@@ -5,7 +5,7 @@
 # Si no hay ningun elemento con "name" == "WORKSPACE_ID", devuelve None
 import json
 import requests
-from config import TARGET_URL, HEADERS_TARGET, SOURCE_URL, HEADERS_SOURCE
+from app.config import TARGET_URL, HEADERS_TARGET
 from typing import Optional
 
 def get_target_workspace_id() -> Optional[str]:
@@ -68,41 +68,12 @@ def change_workspaceid(filename: str, new_workspace_id: str) -> None:
     except Exception as e:
         print(f"Error procesando el archivo: {e}")
 
-def get_variables() -> None:
-    """Obtiene las variables del sistema source y las guarda en variables.json."""
-    url = f"{SOURCE_URL}/variables"
-    try:
-        resp = requests.get(url, headers=HEADERS_SOURCE, timeout=30)
-        if resp.status_code == 200:
-            variables = resp.json()
-            print(f"Variables obtenidas del source: {variables}")
-            # Guardar en variables.json
-            with open('variables.json', 'w', encoding='utf-8') as f:
-                json.dump(variables, f, indent=2, ensure_ascii=False)
-            print("Variables guardadas en variables.json")
-        else:
-            print(f"Error obteniendo variables del source: {resp.status_code} {resp.text}")
-    except requests.RequestException as e:
-        print(f"Error de red al obtener variables del source: {e}")
-
-def post_variables(variables: list) -> None:
-    """Publica una lista de variables en el sistema target."""
-    url = f"{TARGET_URL}/variables"
-    try:
-        resp = requests.post(url, headers=HEADERS_TARGET, json=variables, timeout=30)
-        if resp.status_code == 200 or resp.status_code == 201:
-            print(f"Variables publicadas exitosamente: {resp.json()}")
-        else:
-            print(f"Error publicando variables en el target: {resp.status_code} {resp.text}")
-    except requests.RequestException as e:
-        print(f"Error de red al publicar variables en el target: {e}")
 
 # prueba
 if __name__ == "__main__":
-    get_variables()
-    # workspace_id = get_target_workspace_id()
-    # if workspace_id:
-    #     print(f"Cambiando workspaceId a {workspace_id}")
-    #     change_workspaceid("flows.json", workspace_id)
-    # else:
-    #     print("No se pudo obtener el WORKSPACE_ID del target.")
+    workspace_id = get_target_workspace_id()
+    if workspace_id:
+        print(f"Cambiando workspaceId a {workspace_id}")
+        change_workspaceid("flows.json", workspace_id)
+    else:
+        print("No se pudo obtener el WORKSPACE_ID del target.")
