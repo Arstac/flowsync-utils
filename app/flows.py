@@ -7,6 +7,7 @@ import requests
 
 from app.config import BEARER_TOKEN, SOURCE_URL, TARGET_URL, HEADERS_SOURCE, HEADERS_TARGET
 
+from utils import get_target_workspace_id, change_workspaceid
 # === 3) Obtener los flows desde SOURCE_URL ===
 
 def get_flows() -> list:
@@ -78,6 +79,8 @@ def sync_flows() -> None:
     print(f"Sincronizando flows de {SOURCE_URL} a {TARGET_URL}...")
     flows = get_flows()
     total = len(flows)
+    workspace_id = get_target_workspace_id()
+    flows = change_workspaceid(flows, workspace_id)
     if total == 0:
         print("No hay flows para sincronizar.")
         return
