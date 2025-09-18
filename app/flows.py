@@ -7,7 +7,7 @@ import requests
 
 from app.config import BEARER_TOKEN, SOURCE_URL, TARGET_URL, HEADERS_SOURCE, HEADERS_TARGET
 
-from utils import get_target_workspace_id, change_workspaceid
+from .utils import get_target_workspace_id, change_workspaceid
 # === 3) Obtener los flows desde SOURCE_URL ===
 
 def get_flows() -> list:
