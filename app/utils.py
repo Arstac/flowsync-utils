@@ -74,6 +74,6 @@ if __name__ == "__main__":
     workspace_id = get_target_workspace_id()
     if workspace_id:
         print(f"Cambiando workspaceId a {workspace_id}")
-        change_workspaceid("flows.json", workspace_id)
+        change_workspaceid("flow.json", workspace_id)
     else:
         print("No se pudo obtener el WORKSPACE_ID del target.")
